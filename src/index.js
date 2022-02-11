@@ -9,8 +9,15 @@ $(document).ready(function() {
   $("#go").click(function() {
     ConvertThat.moneyMoney()
       .then(function(res) {
-        let currencyConvert = $("#inputtedCurrency").val() * res.conversion_rates.BDT;
-        $(".text").text(currencyConvert);
+
+        if (res.result != 'success') {
+          $("text").text('Whoops, something went wrong. Check yourself before you wreck yourself.');
+        } else if ($('#inputtedCurrency').val() === ''){
+          $(".text").text('Please enter an amount in USD.');
+        } else {
+          let currencyConvert = $("#inputtedCurrency").val() * res.conversion_rates.BDT;
+          $(".text").text(currencyConvert);
+        }
       });
   });
 });
