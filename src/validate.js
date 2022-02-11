@@ -10,11 +10,13 @@ export function checkResponse(res){
 
 export function sanitizeInputs(input, inCurrency, outCurrency, outCurrencyType, kaChing){
   if (input === '' || isNaN(input)) {
-    return ('Come on, silly. Enter a number, please.');
-  } else if (!isNaN(input)){
+    return ('Invalid user entry.');
+  } else if ((isNaN(inCurrency)) || (isNaN(outCurrency)) || (inCurrency === "") || (outCurrency === "")) {
+    return ('Conversion rate error.');
+  } else if (!isNaN(input) && (!isNaN(inCurrency)) && (!isNaN(outCurrency))){
     kaChing.play();
     return ((input / inCurrency * outCurrency).toFixed(2) + " " + outCurrencyType);
   } else {
-    return ('An error occured');
+    return ('An unknown error occured.');
   }
 }
