@@ -18,6 +18,17 @@ function checkResponse(res){
   }
 }
 
+function checkInput(input){
+  if (input === '' || isNaN(input)) {
+    $('#response-text').text('Come on, silly. Enter a number, please.');
+  } else if (!isNaN(input)){
+    let conversionOutput = input / $('#currency-in').val() * $('#currency-out').val();
+    $('#response-text').text(conversionOutput);
+  } else {
+    $('#response-text').text("What have you done now? We don't know what went wrong.");
+  }
+}
+
 $(document).ready(function() {
   ConvertThat.moneyMoney()
     .then(function(res){
@@ -26,9 +37,7 @@ $(document).ready(function() {
       });
     });
   $("#go").click(function() {
-    let inputtedMonies = $('#user-input').val() / $('#currency-in').val();
-    let outputtedMonies = inputtedMonies * $('#currency-out').val();
-    $('#response-text').text(outputtedMonies);
-    
+    let userInput = parseInt($('#user-input').val());
+    checkInput(userInput);   
   });
 });
