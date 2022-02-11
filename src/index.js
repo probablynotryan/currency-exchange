@@ -6,8 +6,11 @@ import ConvertThat from './convertmoney.js';
 
 $(document).ready(function() {
 
-  ConvertThat.moneyMoney()
-    .then(function(res) {
-      console.log(res);
-    });
+  $("#go").click(function() {
+    ConvertThat.moneyMoney()
+      .then(function(res) {
+        let currencyConvert = $("#inputtedCurrency").val() * res.conversion_rates.BDT;
+        $(".text").text(currencyConvert);
+      });
+  });
 });
