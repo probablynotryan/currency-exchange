@@ -9,9 +9,7 @@ $(document).ready(function() {
   ConvertThat.moneyMoney()
     .then(function(res){
       if (checkResponse(res)) {
-        $('p').show();
-        $('#go').show();
-        $('#user-input').show();
+        $('.conversion').show();
         $('.currency-select').show();
       } else {
         $('#response-text').text('An error occured attempting to fetch from API.');
@@ -22,10 +20,11 @@ $(document).ready(function() {
       });
     });
   $("#go").click(function() {
+    let kaChing = new Audio('https://www.myinstants.com/media/sounds/ka-ching.mp3');
     let userInput = parseInt($('#user-input').val());
     let inCurrencyRate = $('#currency-in').val();
     let outCurrencyRate = $('#currency-out').val();
     let outCurrencyType = $("#currency-out option:selected" ).text();
-    $('#response-text').text(sanitizeInputs(userInput, inCurrencyRate, outCurrencyRate, outCurrencyType));
+    $('#response-text').text(sanitizeInputs(userInput, inCurrencyRate, outCurrencyRate, outCurrencyType, kaChing));
   });
 });
