@@ -9,12 +9,18 @@
 <body>
   <div class="container">
     <div class="col">
-      <p>Enter your currency:</p>
-      <textarea id="user-input"></textarea>
+      <h1 class="conversion" id="title">Convert Money to Money!</h1>
+      <br>
+      <p class="conversion">Please enter an amount and a currency type to convert from:</p>
+      <textarea class="conversion" id="user-input"></textarea>
       <select class="currency-select" id="currency-in"></select>
-      <p>And select the currency you want to convert it to:</p>
+      <br><br>
+      <p class="conversion" id="currency-out-text">... and select the currency you want to convert it to:</p>
       <select class="currency-select" id="currency-out"></select>
-      <button id="go">Convert</button>
+      <br><br>
+      <button id="go" class="conversion">Convert My Currency!</button>
+      <br><br>
+      <div class="conversion" id="outputtext">Your converted amount is:</div>
       <div id="response-text"></div>
     </div>
   </div>

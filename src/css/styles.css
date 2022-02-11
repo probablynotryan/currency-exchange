@@ -1,6 +1,44 @@
 body {
   background-color: lightblue;
 }
-#currency-select, #go, #user-input, p {
+.container {
+  background-color: white;
+  min-height: 500px;
+  min-width: 600px;
+  border: solid black;
+  margin-top: 70px;
+}
+.currency-select, .conversion, #go, #user-input, p {
   display: none;
+}
+.col {
+  margin-top: 20px;
+}
+#title {
+  text-align: center;
+}
+#user-input {
+  margin-left: 120px;
+  resize: none;
+  height: 30px;
+  width: 80px;
+}
+#currency-in {
+  margin-left: 2px;
+}
+#currency-out-text{
+  margin-left: 200px;
+}
+#currency-out {
+  margin-left: 400px;
+}
+#go {
+  margin-left: 220px;
+}
+#outputtext {
+  margin-left: 100px;
+}
+#response-text {
+  font-size: 50px;
+  text-align: center;
 }
