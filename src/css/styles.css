@@ -5,6 +5,8 @@ body {
   background-color: white;
   min-height: 500px;
   min-width: 600px;
+  max-height: 500px;
+  max-width: 600px;
   border: solid black;
   margin-top: 70px;
 }
@@ -25,6 +27,8 @@ body {
 }
 #currency-in {
   margin-left: 2px;
+  margin-top: 6px;
+  position: absolute;
 }
 #currency-out-text{
   margin-left: 200px;
