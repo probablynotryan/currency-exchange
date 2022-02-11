@@ -1,3 +1,6 @@
 body {
   background-color: lightblue;
 }
+#currency-select, #go, #user-input, p {
+  display: none;
+}
