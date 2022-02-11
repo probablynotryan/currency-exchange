@@ -2,7 +2,7 @@
 
 #### By _**Ryan Bass**_
 
-#### This web application uses an API to convert an amount of US currency into different currency.
+#### This web application uses an API to convert an amount of currency into different currency.
 
 ## Technologies Used
 
