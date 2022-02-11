@@ -7,10 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <p>For now, lets convert USD into Bangladesh takas. Enter your currency:</p>
-  <textarea id="userInput"></textarea>
-  <select id="currency-select">Select Currency</select>
-  <button id="go">Convert</button>
-  <div class="text"></div>
+  <div class="container">
+    <p>Enter your currency:</p>
+    <textarea id="user-input"></textarea>
+    <select class="currency-select" id="currency-in"></select>
+    <p>And select the currency you want to convert it to:</p>
+    <select class="currency-select" id="currency-out"></select>
+    <button id="go">Convert</button>
+    <div id="response-text"></div>
+  </div>
 </body>
 </html>
