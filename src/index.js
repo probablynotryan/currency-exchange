@@ -8,7 +8,7 @@ import ConvertThat from './convertmoney.js';
 function sanitizedResponse(res, input){
   if (res.result != 'success') {
     $("text").text('Whoops, something went wrong. Check yourself before you wreck yourself.');
-  } else if (input === '' || input === NaN){
+  } else if (input === '' || isNaN(input)){
     $(".text").text('Please enter an amount in USD.');
   } else {
     let currencyConvert = input * res.conversion_rates.BDT;
@@ -17,11 +17,19 @@ function sanitizedResponse(res, input){
 }
 
 $(document).ready(function() {
+  ConvertThat.moneyMoney()
+    .then(function(res){
+      const conversionRates = res.conversion_rates;
+      const listOfCurrencies = Object.entries(conversionRates);
 
+      listOfCurrencies.forEach(element => {
+        $('#currency-select').append(`<option value = "${element[0]}"> ${element[0]} </option>`);
+      });
+    });
   $("#go").click(function() {
     ConvertThat.moneyMoney()
       .then(function(res) {
-        // setCurrencyOptions(res);
+        let userInput = $("#userInput").val();
         sanitizedResponse(res, userInput);
       });
   });
