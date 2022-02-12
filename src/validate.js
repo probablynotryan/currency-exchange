@@ -1,10 +1,8 @@
 export function checkResponse(res){
-  if (res.result != 'success') {
-    return -1;
-  } else if (res.result === 'success'){
-    return 1;
+  if (res.result === 'success'){
+    return true;
   } else {
-    return -1;
+    return false;
   }
 }
 
