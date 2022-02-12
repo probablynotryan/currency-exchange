@@ -12,14 +12,14 @@ $(document).ready(function() {
         $('.conversion').show();
         $('.currency-select').show();
         console.log(res);
+        Object.entries(res.conversion_rates).forEach(element => {
+          $('.currency-select').append(`<option value = "${element[1]}"> ${element[0]} </option>`);
+        });
       } else {
         console.log(res);
         $('#response-text').text('An error occured attempting to fetch from API.');
         return;
       }
-      Object.entries(res.conversion_rates).forEach(element => {
-        $('.currency-select').append(`<option value = "${element[1]}"> ${element[0]} </option>`);
-      });
     });
   $("#go").click(function() {
     let kaChing = new Audio('https://www.myinstants.com/media/sounds/ka-ching.mp3');
