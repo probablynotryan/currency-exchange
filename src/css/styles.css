@@ -10,6 +10,10 @@ body {
   border: solid black;
   margin-top: 70px;
 }
+#api-updated, #foot {
+  font-size: 12px;
+  text-align: center;
+}
 .currency-select, .conversion, #go, #user-input, p {
   display: none;
 }
