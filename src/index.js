@@ -8,10 +8,12 @@ import {sanitizeInputs, checkResponse} from './validate.js';
 $(document).ready(function() {
   ConvertThat.moneyMoney()
     .then(function(res){
-      if (checkResponse(res)) {
+      if (checkResponse(res) === 1) {
         $('.conversion').show();
         $('.currency-select').show();
+        console.log(res);
       } else {
+        console.log(res);
         $('#response-text').text('An error occured attempting to fetch from API.');
         return;
       }
