@@ -11,16 +11,15 @@ $(document).ready(function() {
       if (checkResponse(res) === 1) {
         $('.conversion').show();
         $('.currency-select').show();
-        console.log(res);
         Object.entries(res.conversion_rates).forEach(element => {
           $('.currency-select').append(`<option value = "${element[1]}"> ${element[0]} </option>`);
         });
       } else {
-        console.log(res);
-        $('#response-text').text('An error occured attempting to fetch from API.');
-        return;
+        $('#response-text').text('Something went wrong.');
       }
-    });
+    }) .catch (function(error){
+      $('#response-text').text(`An error occured attempting to fetch from API. Reason: ${error}`);
+    })
   $("#go").click(function() {
     let kaChing = new Audio('https://www.myinstants.com/media/sounds/ka-ching.mp3');
     let userInput = parseInt($('#user-input').val());
