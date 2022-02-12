@@ -5,7 +5,7 @@ body {
   background-color: white;
   min-height: 500px;
   min-width: 600px;
-  max-height: 500px;
+  max-height: 700px;
   max-width: 600px;
   border: solid black;
   margin-top: 70px;
@@ -43,6 +43,6 @@ body {
   margin-left: 100px;
 }
 #response-text {
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
 }
