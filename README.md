@@ -28,12 +28,12 @@ _Grab what's in your pennybank and see how much money you have in Rupees! or Jam
 
 * Go back to this repository and git clone it to your computer.
 * Create a file in this folder's root and name it ".env" and open it in a terminal-friendly code editor.
-* Copy and paste your API key into that file after "API_KEY=". In order for the application to work, make sure it follows the exact format in the example.  
+* Copy and paste your API key into that file after "API_KEY=". In order for the application to work, make sure it follows the exact format shown below, with your API key replacing "1a2b3c4d5f6g7h".
   Example: 
 > API_KEY=1a2b3c4d5f6g7h
 * Install the necessary packages to build the site by typing "npm install" into the terminal.
 * Build the project and run it in your default browser by typing "npm start" in the terminal.
-*  Enter an amount of currency and currency type, select a currency to convert it to, press 'Convert My Currency!', and ta-da! The converted amount should be returned back to you.
+*  Enter an amount of currency and currency type, select a currency to convert it to, press 'Convert My Currency!', and ta-da! The converted amount should be returned back to you along with a validating "ka-ching" sound.
 
 _* If you plan to upload this into your own repository, make sure that your API key (or file its enclosed in) continues to remain hidden by using .gitignore or something equally as secure._
 
